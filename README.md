@@ -14,7 +14,7 @@
 > [!IMPORTANT]
 > **A single, always-current list of hackathons worth your weekend.** In-person, virtual, and hybrid — college, high-school, and open hackathons all in one place.
 
-Hi, I'm [Jose Cruz](https://www.linkedin.com/in/josegaelcruz). I built this because hackathon listings are scattered across a dozen sites, Discords, and group chats, and half of them are already over by the time you find them. This one starts from zero and stays current.
+Hi, we're [Jose Cruz](https://www.linkedin.com/in/josegaelcruz), [Vick Mahindru](https://www.linkedin.com/in/vickmahindru/), [Cai Zheng](https://www.linkedin.com/in/cai-zheng/), and [Allyson Keightley](https://www.linkedin.com/in/allyson-keightley/). We built this because hackathon listings are scattered across a dozen sites, Discords, and group chats, and half of them are already over by the time you find them. This one starts from zero and stays current.
 
 Hackathons are the fastest way to build something real, meet your future team, and win prizes while you learn. Everything here is community-driven. If you find one, add it. Together we make the path clearer for everyone who comes after us.
 
