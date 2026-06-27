@@ -1,0 +1,35 @@
+name: Add Hackathon (Just Paste Link)
+description: Just paste the link - AI will extract all the details automatically!
+title: "Add: "
+labels: ["new_opportunity", "auto_extract"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Just Paste the Link!
+
+        AI will automatically extract:
+        - Host / organizer
+        - Hackathon name
+        - Location
+        - Format (In-Person / Virtual / Hybrid)
+        - Prize pool
+        - And more!
+
+  - type: input
+    id: url
+    attributes:
+      label: Link to Hackathon
+      description: Paste the URL to the hackathon page
+      placeholder: https://hackmit.org/
+    validations:
+      required: true
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: Any additional context? (Optional)
+      description: Add any notes if the link might be confusing
+      placeholder: This is a beginner-friendly virtual hackathon...
+    validations:
+      required: false

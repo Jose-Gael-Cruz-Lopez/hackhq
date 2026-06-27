@@ -1,0 +1,157 @@
+name: Auto-Extract Opportunity
+
+on:
+  issues:
+    types: [labeled]
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: add_opportunity
+  cancel-in-progress: false
+
+jobs:
+  extract:
+    # Run when either 'approved' or 'auto_extract' is added, as long as both are present
+    if: |
+      (github.event.label.name == 'approved' || github.event.label.name == 'auto_extract')
+      && contains(github.event.issue.labels.*.name, 'approved')
+      && contains(github.event.issue.labels.*.name, 'auto_extract')
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          pip install requests beautifulsoup4 openai
+
+      - name: Extract opportunity details
+        id: extract
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPEN_AI }}
+        run: |
+          python .github/scripts/auto_extract.py "${{ github.event_path }}"
+
+      - name: Update README
+        run: |
+          python .github/scripts/update_readmes.py
+
+      - name: Commit and push changes
+        if: steps.extract.outputs.is_duplicate != 'true' && steps.extract.outputs.commit_message != ''
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add .github/scripts/listings.json README.md
+          git commit -m "${{ steps.extract.outputs.commit_message }}" || echo "No changes to commit"
+          # Rebase and retry push up to 3 times
+          for i in 1 2 3; do
+            git fetch origin main && git rebase origin/main && git push origin main && break
+            echo "Push attempt $i failed, retrying..."
+            sleep 2
+          done
+
+      - name: Handle duplicate detection
+        if: steps.extract.outputs.is_duplicate == 'true'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const duplicateReason = process.env.DUPLICATE_REASON || 'This opportunity already exists in the repository';
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+              body: `## Duplicate Detected ⚠️\n\n${duplicateReason}\n\nPlease check the existing listing before submitting. If you believe this is a different opportunity, please update the title or URL and try again.`
+            });
+            await github.rest.issues.update({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+              state: 'closed',
+              labels: ['duplicate']
+            });
+        env:
+          DUPLICATE_REASON: ${{ steps.extract.outputs.duplicate_reason }}
+
+      - name: Comment on issue (success)
+        if: success() && steps.extract.outputs.is_duplicate != 'true' && steps.extract.outputs.commit_message != ''
+        uses: actions/github-script@v7
+        with:
+          script: |
+            let extractedData = {};
+            try {
+              const rawData = process.env.EXTRACTED_DATA || '{}';
+              extractedData = JSON.parse(rawData);
+            } catch (e) {
+              console.log('Could not parse extracted data:', e);
+            }
+
+            const warning = process.env.WARNING_MSG || '';
+
+            let body = `## Opportunity Added Successfully!\n\n`;
+            body += `| Field | Value |\n`;
+            body += `|-------|-------|\n`;
+            body += `| **Company** | ${extractedData.company_name || 'Unknown'} |\n`;
+            body += `| **Role** | ${extractedData.title || 'Unknown'} |\n`;
+            body += `| **Category** | ${extractedData.category || 'Unknown'} |\n`;
+            body += `| **Location** | ${(extractedData.locations || ['Unknown']).join(', ')} |\n`;
+            body += `| **Season** | ${extractedData.season || 'Unknown'} |\n\n`;
+
+            if (warning) {
+              body += `> Note: ${warning}\n\n`;
+            }
+
+            body += `The opportunity has been added to the README. Thank you for contributing!`;
+
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+              body: body
+            });
+        env:
+          EXTRACTED_DATA: ${{ steps.extract.outputs.extracted_data }}
+          WARNING_MSG: ${{ steps.extract.outputs.warning }}
+
+      - name: Close issue
+        if: success() && steps.extract.outputs.is_duplicate != 'true'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            await github.rest.issues.update({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+              state: 'closed'
+            });
+
+      - name: Comment on issue (failure)
+        if: failure()
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const errorMessage = process.env.ERROR_MSG || 'An unknown error occurred during extraction.';
+
+            let body = `## Extraction Failed\n\n`;
+            body += `**Error:** ${errorMessage}\n\n`;
+            body += `### What to do:\n`;
+            body += `1. Check if the URL is accessible\n`;
+            body += `2. Try using the **Quick Add** template instead (fill in 4 fields manually)\n`;
+            body += `3. Or use the **New Opportunity** template for full control\n`;
+
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+              body: body
+            });
+        env:
+          ERROR_MSG: ${{ steps.extract.outputs.error_message }}

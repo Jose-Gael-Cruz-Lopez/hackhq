@@ -1,0 +1,103 @@
+name: New Hackathon
+description: Contribute a hackathon to our list
+title: "New Hackathon"
+labels: ["new_opportunity"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## New Hackathon Contribution
+        Thanks for taking the time to contribute!
+        > Make sure you've read `CONTRIBUTING.md` before submitting your hackathon.
+
+  - type: input
+    id: url
+    attributes:
+      label: Link to Hackathon Page
+      placeholder: ex. hackmit.org
+    validations:
+      required: true
+
+  - type: input
+    id: company_name
+    attributes:
+      label: Host/Organizer
+      placeholder: ex. MIT
+    validations:
+      required: true
+
+  - type: input
+    id: title
+    attributes:
+      label: Hackathon Name
+      placeholder: ex. HackMIT 2026
+    validations:
+      required: true
+
+  - type: dropdown
+    id: format
+    attributes:
+      label: Format
+      description: How is this hackathon run?
+      multiple: false
+      options:
+        - "In-Person"
+        - "Virtual"
+        - "Hybrid"
+    validations:
+      required: true
+
+  - type: input
+    id: location
+    attributes:
+      label: Location
+      description: |
+        Where is the hackathon located?
+        Please separate multiple locations with a comma.
+        Use "Online" for fully virtual events.
+      placeholder: Cambridge, MA; Online
+    validations:
+      required: true
+
+  - type: input
+    id: prize
+    attributes:
+      label: Prize Pool (Optional)
+      description: Total prizes or rewards, if known.
+      placeholder: ex. $20K+ in prizes
+    validations:
+      required: false
+
+  - type: dropdown
+    id: active
+    attributes:
+      label: Is this hackathon currently open for registration?
+      multiple: false
+      options:
+        - "Yes"
+        - "No"
+    validations:
+      required: true
+
+  - type: input
+    id: email
+    attributes:
+      label: Email associated with your GitHub account (Optional)
+      description: |
+        If you would like to be credited as the contributor when the GitHub Action
+        commits your contribution, please provide your email. If left blank, the
+        contribution will be attributed to actions@github.com.
+      placeholder: ex. yourname@email.com
+    validations:
+      required: false
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: Additional Notes (Optional)
+      description: |
+        Any extra context about the hackathon that might be helpful.
+        This will not be shown on the repo but may help with approval.
+      placeholder: This hackathon is beginner-friendly and offers travel reimbursement...
+    validations:
+      required: false

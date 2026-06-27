@@ -1,0 +1,44 @@
+name: Weekly Digest
+
+on:
+  schedule:
+    - cron: '0 16 * * 1'  # Mondays at 16:00 UTC (~9am PT)
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  digest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Generate digest
+        id: gen
+        run: python .github/scripts/weekly_digest.py
+
+      - name: Ensure digest label exists
+        if: steps.gen.outputs.has_content == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh label create "digest" --color "8B5CF6" --description "Weekly digest of new and closing-soon opportunities" \
+            --repo "${{ github.repository }}" 2>/dev/null || true
+
+      - name: Create issue
+        if: steps.gen.outputs.has_content == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          DATE=$(date '+%B %d, %Y')
+          gh issue create \
+            --title "📬 Weekly Digest — $DATE" \
+            --body-file digest.md \
+            --label "digest" \
+            --repo "${{ github.repository }}"

@@ -1,0 +1,15 @@
+name: Edit Hackathon (Not Supported)
+description: "⚠️ Editing is not supported. To update a listing: close it and re-add with corrected details."
+title: "Edit Hackathon"
+labels: ["edit_opportunity"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## ⚠️ Editing is not currently supported via issues.
+
+        To update an existing listing, please:
+        1. Open a **Close Hackathon** issue to remove the old listing
+        2. Open a new **Add Hackathon** issue with the corrected details
+
+        This ensures data integrity. Thank you for understanding!

@@ -1,0 +1,55 @@
+name: Quick Add
+description: Quickly add a hackathon with just a link and basic info
+title: "Quick Add"
+labels: ["new_opportunity", "quick_add"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Quick Add Hackathon
+        Submit a hackathon with minimal info - defaults will be auto-filled!
+
+  - type: input
+    id: link
+    attributes:
+      label: Link
+      placeholder: https://hackmit.org/
+    validations:
+      required: true
+
+  - type: input
+    id: company_name
+    attributes:
+      label: Host/Organizer
+      placeholder: MIT
+    validations:
+      required: true
+
+  - type: input
+    id: title
+    attributes:
+      label: Hackathon Name
+      placeholder: HackMIT 2026
+    validations:
+      required: true
+
+  - type: dropdown
+    id: format
+    attributes:
+      label: Format
+      multiple: false
+      options:
+        - "In-Person"
+        - "Virtual"
+        - "Hybrid"
+    validations:
+      required: true
+
+  - type: input
+    id: location
+    attributes:
+      label: Location (Optional)
+      description: Leave blank for "Online"
+      placeholder: Cambridge, MA
+    validations:
+      required: false
