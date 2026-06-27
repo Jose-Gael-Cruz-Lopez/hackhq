@@ -11,14 +11,14 @@
 
 </div>
 
-> [!IMPORTANT]
-> **A single, always-current list of hackathons worth your weekend.** In-person, virtual, and hybrid — college, high-school, and open hackathons all in one place.
-
 ## Stats
 
 A snapshot of the list, updated automatically.
 
 <img src="assets/hackathons-banner.svg" alt="Hackathon stats" width="760">
+
+> [!IMPORTANT]
+> **A single, always-current list of hackathons worth your weekend.** In-person, virtual, and hybrid — college, high-school, and open hackathons all in one place.
 
 Hi, we're [Jose Cruz](https://www.linkedin.com/in/josegaelcruz), [Vick Mahindru](https://www.linkedin.com/in/vickmahindru/), [Cai Zheng](https://www.linkedin.com/in/cai-zheng/), [Allyson Keightley](https://www.linkedin.com/in/allyson-keightley/), and [Henry](https://www.linkedin.com/in/hoanng15/). We built this because hackathon listings are scattered across a dozen sites, Discords, and group chats, and half of them are already over by the time you find them. This one starts from zero and stays current.
 
