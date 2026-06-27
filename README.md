@@ -125,7 +125,21 @@ Want to join this wall? [Add a hackathon](https://github.com/Jose-Gael-Cruz-Lope
 
 ---
 
-## Gallery
+<a id="gallery"></a>
+
+```
+ _   _    _    ____ _  __  ____  _   _  ___ _____ ___
+| | | |  / \  / ___| |/ / |  _ \| | | |/ _ \_   _/ _ \
+| |_| | / _ \| |   | ' /  | |_) | |_| | | | || || | | |
+|  _  |/ ___ \ |___| . \  |  __/|  _  | |_| || || |_| |
+|_| |_/_/   \_\____|_|\_\ |_|   |_| |_|\___/ |_| \___/
+
+  ____    _    _     _     _____ ______   __
+ / ___|  / \  | |   | |   | ____|  _ \ \ / /
+| |  _  / _ \ | |   | |   |  _| | |_) \ V /
+| |_| |/ ___ \| |___| |___| |___|  _ < | |
+ \____/_/   \_\_____|_____|_____|_| \_\|_|
+```
 
 Real photos from hackathons people found through this list. Went to one? [Share a photo](https://github.com/Jose-Gael-Cruz-Lopez/hackathons/issues/new?template=gallery_photo.yaml) and it'll show up here.
 
