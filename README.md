@@ -147,8 +147,7 @@ Real photos from hackathons people found through this list. Went to one? [Share 
 <table>
   <tr>
     <td align="center" valign="top">
-      <a href="assets/gallery/lahacks-ucla.jpg"><img src="assets/gallery/lahacks-ucla.jpg" width="260" alt="LA Hacks"></a><br>
-      <b>LA Hacks</b><br><sub>Hacking through the night at UCLA's Pauley Pavilion</sub><br><sub>📸 <a href="https://www.linkedin.com/in/josegaelcruz">Jose Cruz</a></sub>
+      <a href="assets/gallery/lahacks-ucla.jpg"><img src="assets/gallery/lahacks-ucla.jpg" width="260" alt="LA Hacks"></a>
     </td>
   </tr>
 </table>

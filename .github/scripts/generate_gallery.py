@@ -43,26 +43,13 @@ def esc(text):
 def cell(photo):
     image = esc(photo["image"])
     hackathon = esc(photo.get("hackathon", ""))
-    caption = esc(photo.get("caption", "")).strip()
-    credit = photo.get("credit", "")
-    credit_url = photo.get("credit_url", "")
 
     img = (
         f'<a href="{image}">'
         f'<img src="{image}" width="260" alt="{hackathon}"></a>'
     )
 
-    lines = [f"<b>{hackathon}</b>"]
-    if caption:
-        lines.append(f"<sub>{caption}</sub>")
-    if credit:
-        if credit_url:
-            lines.append(f'<sub>📸 <a href="{esc(credit_url)}">{esc(credit)}</a></sub>')
-        else:
-            lines.append(f"<sub>📸 {esc(credit)}</sub>")
-
-    body = "<br>".join(lines)
-    return f'    <td align="center" valign="top">\n      {img}<br>\n      {body}\n    </td>'
+    return f'    <td align="center" valign="top">\n      {img}\n    </td>'
 
 
 def build_grid(photos):
