@@ -1,1 +1,18 @@
-[]
+[
+  {
+    "id": "cc84d02a-7651-4745-8679-e4863c63a718",
+    "company_name": "MIT",
+    "title": "HackMIT 2026 (Weekend Hackathon; Open to Undergrads Worldwide)",
+    "url": "https://hackmit.org/",
+    "locations": [
+      "Cambridge, MA"
+    ],
+    "format": "In-Person",
+    "prize": "$20K+ in prizes",
+    "active": true,
+    "is_visible": true,
+    "date_posted": 1782592140,
+    "date_updated": 1782592140,
+    "source": "Jose-Gael-Cruz-Lopez"
+  }
+]

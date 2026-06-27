@@ -33,12 +33,14 @@ Hackathons are the fastest way to build something real, meet your future team, a
 - [Resources](#resources)
 - [Contributing](#contributing)
 - [Acknowledgements](#acknowledgements)
+- [Contributors](#contributors)
 
 ## Hackathons
 
 <!-- HACKATHONS_TABLE_START -->
 | Status | Host | Hackathon | Format | Location | Prize | Application | Date Posted |
 | ------ | ---- | --------- | ------ | -------- | ----- | ----------- | ----------- |
+| ✅ **[OPEN]** | MIT | HackMIT 2026 (Weekend Hackathon; Open to Undergrads Worldwide) | In-Person | Cambridge, MA | $20K+ in prizes | <a href="https://hackmit.org/"><img src="https://img.shields.io/badge/Register-blue?style=for-the-badge" alt="Register"></a> | Jun 27, 2026 |
 <!-- HACKATHONS_TABLE_END -->
 
 ---
@@ -64,3 +66,46 @@ We welcome contributions from anyone. If you know of a hackathon that isn't list
 ## Acknowledgements
 
 Inspired by [Summer2026-Internships](https://github.com/vanshb03/Summer2026-Internships) by Vansh and the CSCareers community.
+
+---
+
+## Contributors
+
+The people building and maintaining this list 💛
+
+<table>
+  <tr>
+    <td align="center">
+      <a href="https://www.linkedin.com/in/josegaelcruz">
+        <img src="assets/contributors/jose.jpg" width="115" height="115" alt="Jose Cruz"><br>
+        <sub><b>Jose Cruz</b></sub>
+      </a>
+    </td>
+    <td align="center">
+      <a href="https://www.linkedin.com/in/vickmahindru/">
+        <img src="assets/contributors/vick.jpg" width="115" height="115" alt="Vick Mahindru"><br>
+        <sub><b>Vick Mahindru</b></sub>
+      </a>
+    </td>
+    <td align="center">
+      <a href="https://www.linkedin.com/in/cai-zheng/">
+        <img src="assets/contributors/cai.jpg" width="115" height="115" alt="Cai Zheng"><br>
+        <sub><b>Cai Zheng</b></sub>
+      </a>
+    </td>
+    <td align="center">
+      <a href="https://www.linkedin.com/in/allyson-keightley/">
+        <img src="assets/contributors/allyson.jpg" width="115" height="115" alt="Allyson Keightley"><br>
+        <sub><b>Allyson Keightley</b></sub>
+      </a>
+    </td>
+    <td align="center">
+      <a href="https://www.linkedin.com/in/hoanng15/">
+        <img src="assets/contributors/henry.jpg" width="115" height="115" alt="Henry"><br>
+        <sub><b>Henry</b></sub>
+      </a>
+    </td>
+  </tr>
+</table>
+
+Want to join this wall? [Add a hackathon](https://github.com/Jose-Gael-Cruz-Lopez/hackathons/issues/new/choose) and you'll be credited as a contributor.
