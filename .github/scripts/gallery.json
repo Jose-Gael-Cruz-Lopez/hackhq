@@ -2,7 +2,36 @@
   {
     "image": "assets/gallery/lahacks-ucla.jpg",
     "hackathon": "LA Hacks",
-    "caption": "Hacking through the night at UCLA's Pauley Pavilion",
+    "credit": "Jose Cruz",
+    "credit_url": "https://www.linkedin.com/in/josegaelcruz"
+  },
+  {
+    "image": "assets/gallery/gtm-hackathon.jpg",
+    "hackathon": "The GTM Hackathon",
+    "credit": "Jose Cruz",
+    "credit_url": "https://www.linkedin.com/in/josegaelcruz"
+  },
+  {
+    "image": "assets/gallery/hackpsu.jpg",
+    "hackathon": "HackPSU",
+    "credit": "Jose Cruz",
+    "credit_url": "https://www.linkedin.com/in/josegaelcruz"
+  },
+  {
+    "image": "assets/gallery/yhack.jpg",
+    "hackathon": "YHack",
+    "credit": "Jose Cruz",
+    "credit_url": "https://www.linkedin.com/in/josegaelcruz"
+  },
+  {
+    "image": "assets/gallery/bostonhacks.jpg",
+    "hackathon": "BostonHacks",
+    "credit": "Jose Cruz",
+    "credit_url": "https://www.linkedin.com/in/josegaelcruz"
+  },
+  {
+    "image": "assets/gallery/library-coding.jpg",
+    "hackathon": "Late-night hacking",
     "credit": "Jose Cruz",
     "credit_url": "https://www.linkedin.com/in/josegaelcruz"
   }
