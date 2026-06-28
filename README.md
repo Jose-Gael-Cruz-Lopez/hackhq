@@ -142,15 +142,7 @@ Want to join this wall? [Add a hackathon](https://github.com/Jose-Gael-Cruz-Lope
 
 <a id="gallery"></a>
 
-```
-@@     @@    @@@     @@@@@@  @@    @@    @@@@@@@@  @@     @@  @@@@@@@  @@@@@@@@  @@@@@@@      @@@@@@      @@@    @@       @@       @@@@@@@@ @@@@@@@@  @@    @@
-@@     @@   @@ @@   @@    @@ @@   @@     @@     @@ @@     @@ @@     @@    @@    @@     @@    @@    @@    @@ @@   @@       @@       @@       @@     @@  @@  @@
-@@     @@  @@   @@  @@       @@  @@      @@     @@ @@     @@ @@     @@    @@    @@     @@    @@         @@   @@  @@       @@       @@       @@     @@   @@@@
-@@@@@@@@@ @@     @@ @@       @@@@@       @@@@@@@@  @@@@@@@@@ @@     @@    @@    @@     @@    @@   @@@@ @@     @@ @@       @@       @@@@@@   @@@@@@@@     @@
-@@     @@ @@@@@@@@@ @@       @@  @@      @@        @@     @@ @@     @@    @@    @@     @@    @@    @@  @@@@@@@@@ @@       @@       @@       @@   @@      @@
-@@     @@ @@     @@ @@    @@ @@   @@     @@        @@     @@ @@     @@    @@    @@     @@    @@    @@  @@     @@ @@       @@       @@       @@    @@     @@
-@@     @@ @@     @@  @@@@@@  @@    @@    @@        @@     @@  @@@@@@@     @@     @@@@@@@      @@@@@@   @@     @@ @@@@@@@@ @@@@@@@@ @@@@@@@@ @@     @@    @@
-```
+<img src="assets/gallery-title.svg" alt="HACK PHOTO GALLERY" width="100%">
 
 Real photos from hackathons people found through this list. Went to one? [Share a photo](https://github.com/Jose-Gael-Cruz-Lopez/hackhq/issues/new?template=gallery_photo.yaml) and it'll show up here.
 
