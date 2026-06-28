@@ -147,36 +147,14 @@ Want to join this wall? [Add a hackathon](https://github.com/Jose-Gael-Cruz-Lope
 Real photos from hackathons people found through this list. Went to one? [Share a photo](https://github.com/Jose-Gael-Cruz-Lopez/hackhq/issues/new?template=gallery_photo.yaml) and it'll show up here.
 
 <!-- GALLERY_START -->
-<table>
-  <tr>
-    <td align="center" valign="top">
-      <a href="assets/gallery/lahacks-ucla.jpg"><img src="assets/gallery/lahacks-ucla.jpg" width="260" alt="LA Hacks"></a>
-    </td>
-    <td align="center" valign="top">
-      <a href="assets/gallery/gtm-hackathon.jpg"><img src="assets/gallery/gtm-hackathon.jpg" width="260" alt="The GTM Hackathon"></a>
-    </td>
-    <td align="center" valign="top">
-      <a href="assets/gallery/hackpsu.jpg"><img src="assets/gallery/hackpsu.jpg" width="260" alt="HackPSU"></a>
-    </td>
-  </tr>
-  <tr>
-    <td align="center" valign="top">
-      <a href="assets/gallery/yhack.jpg"><img src="assets/gallery/yhack.jpg" width="260" alt="YHack"></a>
-    </td>
-    <td align="center" valign="top">
-      <a href="assets/gallery/bostonhacks.jpg"><img src="assets/gallery/bostonhacks.jpg" width="260" alt="BostonHacks"></a>
-    </td>
-    <td align="center" valign="top">
-      <a href="assets/gallery/library-coding.jpg"><img src="assets/gallery/library-coding.jpg" width="260" alt="Late-night hacking"></a>
-    </td>
-  </tr>
-  <tr>
-    <td align="center" valign="top">
-      <a href="assets/gallery/gtm-welcome.jpg"><img src="assets/gallery/gtm-welcome.jpg" width="260" alt="The GTM Hackathon"></a>
-    </td>
-    <td align="center" valign="top">
-      <a href="assets/gallery/code-and-tell.jpg"><img src="assets/gallery/code-and-tell.jpg" width="260" alt="Code &amp; Tell (BU Spark!)"></a>
-    </td>
-  </tr>
-</table>
+<p align="center">
+<a href="assets/gallery/lahacks-ucla.jpg"><img src="assets/gallery/lahacks-ucla.jpg" height="175" alt="LA Hacks"></a>
+<a href="assets/gallery/gtm-hackathon.jpg"><img src="assets/gallery/gtm-hackathon.jpg" height="175" alt="The GTM Hackathon"></a>
+<a href="assets/gallery/hackpsu.jpg"><img src="assets/gallery/hackpsu.jpg" height="175" alt="HackPSU"></a>
+<a href="assets/gallery/yhack.jpg"><img src="assets/gallery/yhack.jpg" height="175" alt="YHack"></a>
+<a href="assets/gallery/bostonhacks.jpg"><img src="assets/gallery/bostonhacks.jpg" height="175" alt="BostonHacks"></a>
+<a href="assets/gallery/library-coding.jpg"><img src="assets/gallery/library-coding.jpg" height="175" alt="Late-night hacking"></a>
+<a href="assets/gallery/gtm-welcome.jpg"><img src="assets/gallery/gtm-welcome.jpg" height="175" alt="The GTM Hackathon"></a>
+<a href="assets/gallery/code-and-tell.jpg"><img src="assets/gallery/code-and-tell.jpg" height="175" alt="Code &amp; Tell (BU Spark!)"></a>
+</p>
 <!-- GALLERY_END -->

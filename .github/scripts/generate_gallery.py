@@ -26,7 +26,7 @@ GALLERY_FILE = os.path.join(SCRIPT_DIR, "gallery.json")
 README = os.path.join(SCRIPT_DIR, "..", "..", "README.md")
 START = "<!-- GALLERY_START -->"
 END = "<!-- GALLERY_END -->"
-COLS = 3
+ROW_HEIGHT = 175  # px — every photo is scaled to this height so they pack into a justified collage
 
 
 def load_gallery():
@@ -40,16 +40,15 @@ def esc(text):
     return (str(text).replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;"))
 
 
-def cell(photo):
+def tile(photo):
     image = esc(photo["image"])
     hackathon = esc(photo.get("hackathon", ""))
-
-    img = (
+    # Fixed height + no width keeps each photo's aspect ratio, so they tile
+    # together like a collage instead of sitting in separate boxes.
+    return (
         f'<a href="{image}">'
-        f'<img src="{image}" width="260" alt="{hackathon}"></a>'
+        f'<img src="{image}" height="{ROW_HEIGHT}" alt="{hackathon}"></a>'
     )
-
-    return f'    <td align="center" valign="top">\n      {img}\n    </td>'
 
 
 def build_grid(photos):
@@ -58,12 +57,8 @@ def build_grid(photos):
             "<p align=\"center\"><i>No photos yet. Be the first — "
             "share a shot from a hackathon you found here!</i></p>"
         )
-    rows = []
-    for i in range(0, len(photos), COLS):
-        chunk = photos[i:i + COLS]
-        cells = "\n".join(cell(p) for p in chunk)
-        rows.append(f"  <tr>\n{cells}\n  </tr>")
-    return "<table>\n" + "\n".join(rows) + "\n</table>"
+    tiles = "\n".join(tile(p) for p in photos)
+    return f'<p align="center">\n{tiles}\n</p>'
 
 
 def main():
