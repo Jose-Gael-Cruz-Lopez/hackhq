@@ -56,15 +56,27 @@ def check_schema(listings):
         deadline = listing.get("deadline")
         if deadline is not None:
             parse_deadline_date(deadline)
+        featured = listing.get("featured")
+        if featured is not None and not isinstance(featured, bool):
+            raise ValueError(
+                f"Listing {listing.get('id', 'unknown')} has invalid 'featured' "
+                f"(expected boolean, got {type(featured).__name__})"
+            )
     return True
 
 
+def is_featured(listing):
+    """Return True if a listing is maintainer-featured."""
+    return bool(listing.get("featured", False))
+
+
 def sort_listings(listings):
-    """Sort listings by active status, date posted (newest first), then host name."""
+    """Sort listings: featured first, then active, newest, then host name."""
     return sorted(
         listings,
         key=lambda x: (
-            not x.get("active", False),  # Active first
+            not is_featured(x),           # Featured pinned to top
+            not x.get("active", False),   # Active first
             -x.get("date_posted", 0),     # Newest first
             x.get("company_name", "").lower()
         )

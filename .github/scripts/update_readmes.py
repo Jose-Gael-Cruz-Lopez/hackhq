@@ -81,6 +81,8 @@ def create_hackathons_table(listings):
         state = util.resolve_state(listing)
         host = util.sanitize_table_cell(listing["company_name"])
         title = util.sanitize_table_cell(listing["title"])
+        if util.is_featured(listing):
+            title = f"⭐ {title}"
         fmt = util.sanitize_table_cell(listing.get("format", ""))
         location = util.format_locations(listing.get("locations", []))
         prize = util.sanitize_table_cell(listing.get("prize", "—"))
